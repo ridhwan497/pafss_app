@@ -1,6 +1,6 @@
-# software_project_1
+# Platform Agnostic File Sharing System
 
-A new Flutter project.
+## 1.1 Introduction
 
 ## Getting Started
 
