@@ -1,7 +1,8 @@
+import 'package:software_project_1/screens/home/tablet_home.dart';
+
 import 'device_info.dart';
 import 'package:software_project_1/screens/desktop.dart';
 import 'package:software_project_1/screens/mobile.dart';
-import 'package:software_project_1/screens/tablet.dart';
 import 'package:flutter/material.dart';
 
 class ResponsiveLayout extends StatelessWidget {
@@ -21,7 +22,7 @@ class ResponsiveLayout extends StatelessWidget {
       case DeviceType.mobile:
         return const MobileScreen();
       case DeviceType.tablet:
-        return const TabletScreen();
+        return const TabletHomeScreen();
       case DeviceType.desktop:    
         return const DesktopScreen();
     }
