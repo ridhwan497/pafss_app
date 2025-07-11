@@ -149,14 +149,14 @@ class TabletAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Color(0xFF155263), // Dark teal
+      backgroundColor: Color(0xFF134859), // Dark teal
       automaticallyImplyLeading: false,
       title: Row(
         children: [
           // Optional: Add a logo or title
           const SizedBox(width: 20),
           Text(
-            "Dashboard",
+            "Your Data Is Safe... We dont store it",
             style: GoogleFonts.josefinSans(
               fontSize: 32,
               fontWeight: FontWeight.w600,
