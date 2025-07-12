@@ -1,8 +1,9 @@
+import 'package:software_project_1/screens/home/mobile_home.dart';
 import 'package:software_project_1/screens/home/tablet_home.dart';
+import 'package:software_project_1/screens/send/desktop_send.dart';
 
 import 'device_info.dart';
-import 'package:software_project_1/screens/desktop.dart';
-import 'package:software_project_1/screens/mobile.dart';
+//import 'package:software_project_1/screens/desktop.dart';
 import 'package:flutter/material.dart';
 
 class ResponsiveLayout extends StatelessWidget {
@@ -20,11 +21,11 @@ class ResponsiveLayout extends StatelessWidget {
 
     switch (deviceType) {
       case DeviceType.mobile:
-        return const MobileScreen();
+        return const MobileHomeScreen();
       case DeviceType.tablet:
         return const TabletHomeScreen();
       case DeviceType.desktop:    
-        return const DesktopScreen();
+        return const DesktopSendScreen();
     }
 
   }
