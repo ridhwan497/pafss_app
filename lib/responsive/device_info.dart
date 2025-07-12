@@ -27,7 +27,7 @@ class DeviceInfo {
     if (Platform.isAndroid || Platform.isIOS) {
       // Mobile devices are usually < 600px and since both use the same OS, thats why there is a width check
       // to differentiate between mobile and tablet.
-      return deviceWidth < 600 ? DeviceType.mobile : DeviceType.tablet;
+      return deviceWidth < 800 ? DeviceType.mobile : DeviceType.tablet;
     } else if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
       // Desktop devices
       return DeviceType.desktop;
