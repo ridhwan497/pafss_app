@@ -1,7 +1,13 @@
 import 'dart:io';
 import 'package:file_picker/file_picker.dart';
+import 'package:flutter/foundation.dart' show debugPrintThrottled;
 
 Future<List<File>?> uploadFiles() async {
+
+   debugPrint(String? message, {int? wrapWidth}) {
+      debugPrintThrottled(message, wrapWidth: wrapWidth?? 800); // Default wrap width for debug messages
+    } 
+
   try {
     // Use the instance method instead of static method
     final result = await FilePicker.platform.pickFiles(
@@ -22,7 +28,7 @@ Future<List<File>?> uploadFiles() async {
     }
     return null;
   } catch (e) {
-    print("Error picking files: $e");
+    debugPrint('Error picking files: $e');
     rethrow; // Rethrow to see full error in logs
   }
 }
