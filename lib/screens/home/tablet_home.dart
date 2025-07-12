@@ -1,9 +1,6 @@
-
 import 'package:flutter/material.dart';
-//import 'package:google_fonts/google_fonts.dart';
-import 'package:software_project_1/widgets/tablet_drawer.dart';
-import 'package:software_project_1/widgets/upload_card.dart';
-
+import 'package:software_project_1/widgets/tablet/tablet_appbar.dart';
+import 'package:software_project_1/widgets/tablet/tablet_drawer.dart';
 
 // Tablet home screen
 class TabletHomeScreen extends StatelessWidget {
@@ -12,6 +9,10 @@ class TabletHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+    
     return Scaffold(
       body: Row(
         children: [
@@ -32,27 +33,9 @@ class TabletHomeScreen extends StatelessWidget {
                     color: Color(0xFF134859), // Dark teal background
                     child: Center(
                       child: SizedBox(
-                        width: double.infinity, 
-                        height: 500,
-                        child: UploadCard(
-                          //onTap: () {
-                            // Navigate to the send screen when the card is tapped
-                           // Navigator.pushNamed(context, '/send'); //Change this to 
-                          //},
-                          onFilesPicked: (files) {
-                            if (files != null) {
-                              // Handle the picked files here
-                              // For example, you can print the file paths
-                              for (var file in files) {
-                                print('Picked file: ${file.path}');
-                              }
-                            } else {
-                              // Handle the case when no files were picked
-                              print('No files were picked');
-                            }
-
-                          },
-                        ),
+                        width: screenWidth * 0.75, // 75% of screen width
+                        height: screenHeight * 0.6,
+                        
                       ),
                     ),
                   ),
