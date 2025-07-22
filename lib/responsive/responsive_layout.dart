@@ -1,6 +1,5 @@
 import 'package:software_project_1/screens/home/mobile_home.dart';
 import 'package:software_project_1/screens/home/tablet_home.dart';
-import 'package:software_project_1/screens/send/desktop_send.dart';
 
 import 'device_info.dart';
 //import 'package:software_project_1/screens/desktop.dart';
@@ -25,7 +24,7 @@ class ResponsiveLayout extends StatelessWidget {
       case DeviceType.tablet:
         return const TabletHomeScreen();
       case DeviceType.desktop:    
-        return const DesktopSendScreen();
+        return const TabletHomeScreen();
     }
 
   }
