@@ -16,7 +16,9 @@ class UploadCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
       onTap: () async{
         final files = await uploadFiles(); 
         onFilesPicked(files);
@@ -45,6 +47,7 @@ class UploadCard extends StatelessWidget {
           ),
         ),
       ),
+    ),
     );
   } 
 }
