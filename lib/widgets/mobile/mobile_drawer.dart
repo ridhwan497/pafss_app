@@ -22,66 +22,68 @@ class MobileDrawer extends StatelessWidget{
         padding: EdgeInsets.symmetric(
           vertical: screenHeight * 0.04, 
           horizontal: screenWidth * 0.02
-          ),
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.start, //align items to the start
-          crossAxisAlignment: CrossAxisAlignment.end,
+        ),
+        child: SingleChildScrollView(
+         child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start, //align items to the start
+            crossAxisAlignment: CrossAxisAlignment.end,
 
-          children: [
-            //--------------------------------------------------
-            //------------------ Close Icon --------------------
-            //--------------------------------------------------
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, screenHeight * 0.03, 0, 0),
-              child: InkWell(
-                onTap: () {
-                  Navigator.pop(context); // Close the drawer
-                },
-                child: Icon(
-                  Icons.close_rounded,
-                  size: screenHeight * 0.05,
-                  color: Color(0xFF134859), // Dark teal color for the close icon
+            children: [
+              //--------------------------------------------------
+              //------------------ Close Icon --------------------
+              //--------------------------------------------------
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, screenHeight * 0.03, 0, 0),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pop(context); // Close the drawer
+                  },
+                  child: Icon(
+                    Icons.close_rounded,
+                    size: screenHeight * 0.05,
+                    color: Color(0xFF134859), // Dark teal color for the close icon
+                  ),
+                ),
+                ),
+              //--------------------------------------------------
+              //------------------ Send Row ---------------------
+              //--------------------------------------------------
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, screenHeight * 0.03, 0, 0),
+                child: BuildDrawerItem(
+                  icon: Icons.send_rounded,
+                  label: 'Send',
+                  onTap: () => navigateTo(context, const MobileSendScreen()),
                 ),
               ),
-              ),
-            //--------------------------------------------------
-            //------------------ Send Row ---------------------
-            //--------------------------------------------------
+            //-------------------------------------------------
+            //------------------- Recieve Row -----------------
+            //-------------------------------------------------
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, screenHeight * 0.03, 0, 0),
               child: BuildDrawerItem(
-                icon: Icons.send_rounded,
-                label: 'Send',
-                onTap: () => navigateTo(context, const MobileSendScreen()),
+                icon: Icons.download_rounded,
+                label: 'Receive',
+                onTap: () => navigateTo(context, const MobileReceiveScreen()), // Replace with actual receive screen
+              ),  
+              ),
+            //-------------------------------------------------
+            //------------------- About Row -------------------
+            //-------------------------------------------------
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0, screenHeight * 0.03, 0, 0),
+              child: BuildDrawerItem(
+                icon: Icons.info_rounded,
+                label: 'About',
+                onTap: () => navigateTo(context, const MobileAboutScreen()), // Replace with actual about screen
               ),
             ),
-          //-------------------------------------------------
-          //------------------- Recieve Row -----------------
-          //-------------------------------------------------
-          Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, screenHeight * 0.03, 0, 0),
-            child: BuildDrawerItem(
-              icon: Icons.download_rounded,
-              label: 'Receive',
-              onTap: () => navigateTo(context, const MobileReceiveScreen()), // Replace with actual receive screen
-            ),  
-            ),
-          //-------------------------------------------------
-          //------------------- About Row -------------------
-          //-------------------------------------------------
-          Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, screenHeight * 0.03, 0, 0),
-            child: BuildDrawerItem(
-              icon: Icons.info_rounded,
-              label: 'About',
-              onTap: () => navigateTo(context, const MobileAboutScreen()), // Replace with actual about screen
-            ),
-          ),
 
-          ],
-        ),
-      
+            ],
+          ),
+        )
+             
       ),
       
     );
